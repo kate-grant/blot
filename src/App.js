@@ -1,4 +1,7 @@
-import Todo from "./components/Todo"
+import React from "react";
+import Form from "./components/Form";
+import FilterButton from "./components/FilterButton";
+import Todo from "./components/Todo";
 
 function App(props) {
 
@@ -13,23 +16,12 @@ function App(props) {
   return (
     <div className="todoapp stack-large">
       <h1>Blot</h1>
-      <form>
-        <h2 className="label-wrapper">
-          <label htmlFor="new-todo-input" className="label__lg">
-            What needs to be done?
-          </label>
-        </h2>
-        <input
-          type="text"
-          id="new-todo-input"
-          className="input input__lg"
-          name="text"
-          autoComplete="off"
-        />
-        <button type="submit" className="btn btn__primary btn__lg">
-          Add
-        </button>
-      </form>
+      <Form />
+      <div className="filters btn-group stack-exception">
+        <FilterButton />
+        <FilterButton />
+        <FilterButton />
+      </div>
       <ul
         role="list"
         className="todo-list stack-large stack-exception"
